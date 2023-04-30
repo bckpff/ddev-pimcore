@@ -12,20 +12,11 @@ ddev exec ./vendor/bin/pimcore-install --admin-username=admin --admin-password=a
 --mysql-host-socket=ddev-pimcore-db --mysql-port=3306 \
 --no-interaction
 ```
-
-- Point your virtual host to `my-project/public` 
-- Open https://your-host/admin in your browser
-- Done! 😎
-
-4. Install pimcore and initialize the DB
-    `docker-compose exec php vendor/bin/pimcore-install --mysql-host-socket=db --mysql-username=pimcore --mysql-password=pimcore --mysql-database=pimcore`
-    * When asked for admin user and password: Choose freely
-    * This can take a while, up to 20 minutes
     
 5. :heavy_check_mark: DONE - You can now visit your pimcore instance:
-    * The frontend: <http://localhost>
+    * The frontend: <https://pimcore.ddev.site>
     * The admin interface, using the credentials you have chosen above:
-      <http://localhost/admin>
+      <https://pimcore.ddev.site/admin>
 
 ## Other demo/skeleton packages
 - [Pimcore Basic Demo](https://github.com/pimcore/demo)
