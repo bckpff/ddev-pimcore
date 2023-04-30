@@ -11,6 +11,8 @@ ddev exec ./vendor/bin/pimcore-install --admin-username=admin --admin-password=a
 --mysql-username=db --mysql-password=db --mysql-database=db \
 --mysql-host-socket=ddev-pimcore-db --mysql-port=3306 \
 --no-interaction
+# Add elasticsearch
+ddev get ddev/ddev-elasticsearch
 ```
     
 5. :heavy_check_mark: DONE - You can now visit your pimcore instance:
