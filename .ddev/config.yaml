@@ -1,4 +1,4 @@
-name: ddev-pimcore
+name: pimcore
 type: php
 docroot: public
 php_version: "8.1"

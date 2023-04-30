@@ -43,7 +43,7 @@ services:
             - db
         volumes:
             - .:/var/www/html
-            - ./.docker/messenger-consume.conf:/etc/supervisor/conf.d/pimcore.conf:ro
+            - ./.docker/supervisord.conf:/etc/supervisor/conf.d/pimcore.conf:ro
 
 volumes:
     pimcore-database:

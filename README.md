@@ -5,37 +5,17 @@ If you are new to Pimcore, it's better to start with our demo package, listed be
 
 ## Getting started
 ```bash
-COMPOSER_MEMORY_LIMIT=-1 composer create-project pimcore/skeleton my-project
-cd ./my-project
-./vendor/bin/pimcore-install
+ddev start
+ddev composer install
+ddev exec ./vendor/bin/pimcore-install --admin-username=admin --admin-password=admin \
+--mysql-username=db --mysql-password=db --mysql-database=db \
+--mysql-host-socket=ddev-pimcore-db --mysql-port=3306 \
+--no-interaction
 ```
 
 - Point your virtual host to `my-project/public` 
 - Open https://your-host/admin in your browser
 - Done! 😎
-
-## Docker
-
-You can also use Docker to setup a new Pimcore Installation.
-You don't need to have a PHP environment with composer installed.
-
-### Prerequisits
-
-* Your user must be allowed to run docker commands (directly or via sudo).
-* You must have docker-compose installed.
-* Your user must be allowed to change file permissions (directly or via sudo).
-
-### Follow these steps
-1. Initialize the skeleton project using the `pimcore/pimcore` image
-``docker run -u `id -u`:`id -g` --rm -v `pwd`:/var/www/html pimcore/pimcore:php8.1-latest composer create-project pimcore/skeleton my-project``
-
-2. Go to your new project
-`cd my-project/`
-
-3. Part of the new project is a docker compose file
-    * Run `` echo `id -u`:`id -g` `` to retrieve your local user and group id
-    * Open the `docker-compose.yml` file in an editor, uncomment all the `user: '1000:1000'` lines and update the ids if necessary
-    * Start the needed services with `docker-compose up -d`
 
 4. Install pimcore and initialize the DB
     `docker-compose exec php vendor/bin/pimcore-install --mysql-host-socket=db --mysql-username=pimcore --mysql-password=pimcore --mysql-database=pimcore`
